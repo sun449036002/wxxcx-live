@@ -1,0 +1,15 @@
+/* pages/main/main.wxss */
+.live-item {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  width:100vw;
+  height: 30px;
+  left:0;
+  bottom:0;
+  padding:5px 0 0 15px;
+  color: #fff;
+  background-color:rgba(0, 0, 0, 0.3);
+}

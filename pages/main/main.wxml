@@ -1,0 +1,7 @@
+<!--pages/main/main.wxml-->
+<scroll-view>
+<view class='live-item' wx:for="{{liveList}}" wx:key="{{key}}">
+<image src='{{item.roomCover}}'></image>
+<view class='title'>{{item.roomName}}</view>
+</view>
+</scroll-view>
