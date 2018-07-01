@@ -1,0 +1,46 @@
+/* components/chat/chat.wxss */
+
+.chat-box {
+  height: 50vh;
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+.chat-list {
+  min-height: 40vh;
+  height: 40vh;
+}
+
+.chat-bottom {
+  display: flex;
+  height: 10vh;
+}
+
+.chat-item {
+  display: flex;
+  min-height: 36px;
+  line-height: 36px;
+  padding: 0 15px 0 15px;
+}
+
+.nickname {
+  color: #576b95;
+  margin-right: 10px;
+}
+
+.msg {
+}
+
+.chat-input {
+  width: 66vw;
+  height: 7vh;
+  margin-top: 1vh;
+  padding-left: 10px;
+  border-radius: 5px;
+  background-color: rgba(232, 232, 232, 0.5);
+}
+
+.btn-send {
+  height: 7vh;
+  margin-top: 1vh;
+}

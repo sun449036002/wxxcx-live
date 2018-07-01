@@ -1,0 +1,5 @@
+<!--pages/player/player.wxml-->
+<block wx:if="{{roomId}}">
+<live-player class="player" src="{{rtmpUrl}}/{{roomId}}" mode="RTC" autoplay bindstatechange="statechange" binderror="error"/>
+<chat class="chat" roomId="{{roomId}}"></chat>
+</block>

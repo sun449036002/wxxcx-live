@@ -1,6 +1,5 @@
-// pages/main/main.js
-const app = getApp();
-const APIURL = app.globalData.apiurl;
+// pages/player/player.js
+const RTMPURL = getApp().globalData.rtmpurl;
 
 Page({
 
@@ -8,23 +7,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    liveList : []
+    roomId:0,
+    rtmpUrl : RTMPURL
   },
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var self = this;
-    wx.request({
-      url: APIURL + 'room/get-list',
-      success:function(res){
-        console.log(res.data.items);
-        self.setData({
-          liveList : res.data.items || []
-        })
-      }
+    self.setData({
+      roomId:options.roomId || 0
     })
   },
 
@@ -75,5 +69,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  statechange(e) {
+    console.log('live-player code:', e.detail.code)
+  },
+  error(e) {
+    console.error('live-player error:', e.detail.errMsg)
   }
 })

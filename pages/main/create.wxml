@@ -1,0 +1,5 @@
+<!--pages/main/create.wxml-->
+<view class='box'>
+  <input class='room-title' type='text' placeholder='请输入直播间的名称' value='' bindinput='roomTitleChange'></input>
+  <button class='btn-create' type='primary' size='default' bindtap='createRoom'>创建</button>
+</view>

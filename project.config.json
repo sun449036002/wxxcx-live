@@ -33,12 +33,31 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
 					"name": "主页",
-					"pathName": "pages/main/main"
+					"pathName": "pages/main/main",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "直播页",
+					"pathName": "pages/live/live",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "创建直播页",
+					"pathName": "pages/main/create",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "播放页",
+					"pathName": "pages/player/player",
+					"query": "roomId=12"
 				}
 			]
 		}

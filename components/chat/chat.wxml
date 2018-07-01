@@ -1,0 +1,13 @@
+<!--components/chat/chat.wxml-->
+<view class='chat-box'>
+  <scroll-view class='chat-list' scroll-y wx:for="{{chatList}}" wx:key="key">
+    <view class='chat-item'>
+      <view class='nickname'>{{item.nickname}}:</view>
+      <view class='msg'>{{item.msg}}</view>
+    </view>
+  </scroll-view>
+  <view class='chat-bottom'>
+    <input class='chat-input' placeholder='聊一聊吧~' value='{{msg}}' bindinput='chatInputChange'></input>
+    <button class='btn-send' bindtap='sendMsg' size='mini' bindtap='sendMsg'>发送</button>
+  </view>
+</view>

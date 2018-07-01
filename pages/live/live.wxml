@@ -1,0 +1,4 @@
+<!--pages/live/live.wxml--> 
+<block wx:if="{{roomId}}">
+<live-pusher url="{{rtmpUrl}}/{{roomId}}" mode="RTC" autopush bindstatechange="statechange" style="width: 100vw; height: 225px;" />
+</block>

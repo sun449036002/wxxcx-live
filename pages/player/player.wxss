@@ -1,0 +1,12 @@
+/* pages/player/player.wxss */
+
+.player {
+  width: 100vw;
+  height: 50vh;
+}
+
+.chat {
+  display: block;
+  width: 100vw;
+  height: 50vh;
+}

@@ -13,3 +13,19 @@
   color: #fff;
   background-color:rgba(0, 0, 0, 0.3);
 }
+
+.create-room {
+  position: fixed;
+  right: 3px;
+  bottom: 12vh;
+  width:40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px 20px 0 20px;
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgba(0,0,0, 0.3);
+  border: 1px solid sandybrown;
+  color:#FFF;
+}

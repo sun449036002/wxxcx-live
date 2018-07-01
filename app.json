@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/main/main",
+    "pages/player/player",
+    "pages/live/live",
+    "pages/main/create",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/main/main"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

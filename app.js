@@ -34,6 +34,9 @@ App({
     })
   },
   globalData: {
+    apiurl: "https://talk.sun.zj.cn/v1/",
+    rtmpurl: "https://www.sun.zj.cn/live",
+    socketurl: "wss://talk.sun.zj.cn",
     userInfo: null
   }
 })
