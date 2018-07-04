@@ -1,9 +1,9 @@
 <!--components/chat/chat.wxml-->
 <view class='chat-box'>
-  <scroll-view class='chat-list' scroll-y wx:for="{{chatList}}" wx:key="key">
-    <view class='chat-item'>
+  <scroll-view class='chat-list' scroll-y scroll-top="{{scrollTop}}">
+    <view class='chat-item'  wx:for="{{chatList}}" wx:key="key">
       <view class='nickname'>{{item.nickname}}:</view>
-      <view class='msg'>{{item.msg}}</view>
+      <view class='msg'>{{item.content}}</view>
     </view>
   </scroll-view>
   <view class='chat-bottom'>

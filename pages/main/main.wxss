@@ -29,3 +29,7 @@
   border: 1px solid sandybrown;
   color:#FFF;
 }
+
+.room-cover {
+  width:100vw;
+}

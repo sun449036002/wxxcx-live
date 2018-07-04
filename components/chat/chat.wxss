@@ -20,12 +20,15 @@
   display: flex;
   min-height: 36px;
   line-height: 36px;
-  padding: 0 15px 0 15px;
+  padding: 0 5px 0 15px;
 }
 
 .nickname {
   color: #576b95;
   margin-right: 10px;
+  max-width: 30vw;
+  overflow: hidden;
+   white-space: nowrap; 
 }
 
 .msg {
@@ -35,6 +38,7 @@
   width: 66vw;
   height: 7vh;
   margin-top: 1vh;
+  margin-left:10px;
   padding-left: 10px;
   border-radius: 5px;
   background-color: rgba(232, 232, 232, 0.5);

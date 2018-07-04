@@ -54,10 +54,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "播放页",
 					"pathName": "pages/player/player",
-					"query": "roomId=12"
+					"query": "roomId=room_12"
 				}
 			]
 		}
