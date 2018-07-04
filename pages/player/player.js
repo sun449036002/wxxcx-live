@@ -1,5 +1,8 @@
 // pages/player/player.js
-const RTMPURL = getApp().globalData.rtmpurl;
+const app = getApp();
+const RTMPURL = app.globalData.rtmpurl;
+
+var roomId = 0;
 
 Page({
 
@@ -15,32 +18,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    var self = this;
-    self.setData({
-      roomId:options.roomId || 0
-    })
+    console.log("onLoad options", options)
+    roomId = options.roomId;
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    console.log('onReady');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    console.log('onShow');
+    var self = this;
+    app.checkLogin(function () {
+      self.setData({
+        roomId: roomId || 0
+      })
+    });
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    console.log('onHide');
   },
 
   /**

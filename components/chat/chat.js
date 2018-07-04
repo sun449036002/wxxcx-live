@@ -31,15 +31,11 @@ Component({
    */
   methods: {
     init: function(res) {
-      console.log(app.globalData);
       var self = this;
       setTimeout(function() {
+        console.log(app.globalData.userInfo);
         wx.connectSocket({
-          url: 'wss://talk.sun.zj.cn/wss?roomId=' + (self.data.roomId || "") + "&sessionKey=" + app.globalData.userInfo.session_key,
-          data: {
-            roomId: self.data.roomId || "",
-            sessionKey: "" //app.globalData.userInfo.sessionKey || ""
-          }
+          url: 'wss://talk.sun.zj.cn/wss?roomId=' + (self.data.roomId || "") + "&sessionKey=" + app.globalData.userInfo.session_key
         });
       }, 500);
 

@@ -30,7 +30,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var self = this; 
+    app.checkLogin();
   },
 
   /**
@@ -89,23 +90,23 @@ Page({
     }
     wx.request({
       url: APIURL + 'room/Create',
-      data : {
-        name : self.data.roomTitle || ""
+      data: {
+        name: self.data.roomTitle || ""
       },
-      success : function(res) {
+      success: function(res) {
         console.log("success", res);
-        if(res.data.code > 0) {
+        if (res.data.code > 0) {
           wx.showModal({
             title: '提示',
             content: res.data.msg || "",
-            showCancel : false
+            showCancel: false
           })
           return;
         }
-        if(!res.data.roomId) {
+        if (!res.data.roomId) {
           wx.showModal({
             title: '提示',
-            content:"房间ID有误，请与管理员联系",
+            content: "房间ID有误，请与管理员联系",
             showCancel: false
           })
           return;
@@ -114,8 +115,8 @@ Page({
           url: '/pages/live/live?roomId=' + res.data.roomId,
         })
       },
-      fail : function(res) {
-        console.log("fail",res);
+      fail: function(res) {
+        console.log("fail", res);
       }
     })
   }

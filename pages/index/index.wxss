@@ -5,17 +5,13 @@
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.tips {  
+  border: 2px groove #fda;
+  border-radius: 5px;
+  width:80vw;
+  height: 60px;
+  line-height: 30px; 
+  padding:15px;
+  margin: auto;
+  margin-bottom: 15px;
 }
