@@ -18,6 +18,9 @@ Page({
     this.setData({
       roomId: options.roomId || 0
     });
+    wx.setNavigationBarTitle({
+      title: "房间号：" + options.roomId//页面标题为路由参数
+    })
   },
 
   /**

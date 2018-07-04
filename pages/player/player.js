@@ -20,6 +20,9 @@ Page({
   onLoad: function (options) {
     console.log("onLoad options", options)
     roomId = options.roomId;
+    wx.setNavigationBarTitle({
+      title: "房间号：" + options.roomId//页面标题为路由参数
+    })
   },
 
   /**

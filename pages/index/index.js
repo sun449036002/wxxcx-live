@@ -8,6 +8,9 @@ Page({
   },
 
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: "授权"//页面标题为路由参数
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

@@ -21,8 +21,18 @@ Component({
     scrollTop: 0
   },
 
+  created : function(){
+    console.log("com created");
+  },
+  attached :function(){
+    console.log("com attached");
+  },
   ready: function(res) {
+    console.log("com ready");
     this.init();
+  },
+  detached : function(){
+    wx.closeSocket();
   },
 
   /**
