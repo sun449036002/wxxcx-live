@@ -48,9 +48,11 @@ Component({
       var self = this;
       setTimeout(function() {
         console.log(app.globalData.userInfo);
-        wx.connectSocket({
-          url: 'wss://talk.sun.zj.cn/wss?roomId=' + (self.data.roomId || "") + "&sessionKey=" + app.globalData.userInfo.session_key
-        });
+        if (app.globalData.userInfo) {
+          wx.connectSocket({
+            url: 'wss://talk.sun.zj.cn/wss?roomId=' + (self.data.roomId || "") + "&sessionKey=" + app.globalData.userInfo.session_key
+          });
+        }
       }, 500);
 
       wx.onSocketOpen(function(res) {

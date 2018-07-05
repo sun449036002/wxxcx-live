@@ -1,6 +1,4 @@
 /* pages/live/live.wxss */
-
-
 .chat {
   display: block;
   width: 100vw;
@@ -21,4 +19,16 @@
    height: 30px; 
    margin:1px;
 
+}
+
+.switch-camera {
+  position: absolute;
+  top:50px;
+  left:1px;
+  width:35px;
+  height:25px;
+  padding:5px;
+  color:white;
+  border:1px solid blueviolet;
+  border-radius: 3px;
 }

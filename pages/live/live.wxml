@@ -7,6 +7,7 @@
     <block wx:else>
       <cover-image class='full-scene-icon' src="/res/imgs/fullSceneIcon.png" bindtap='toFullScene'></cover-image>
     </block>
+    <cover-view class='switch-camera' bindtap='switchCamera'>切换</cover-view>
   </live-pusher>
   <block wx:if="{{!isFullScene}}">
     <chat class="chat" roomId="{{roomId}}"></chat>

@@ -99,5 +99,12 @@ Page({
       isFullScene: true,
       livePlayHeight: "90vh"
     })
+  },
+  /**
+   * 转换摄像头 前后
+   */
+  switchCamera: function(e) {
+    wx.createLivePusherContext().switchCamera();
+    console.log('转换摄像头ok');
   }
 })
