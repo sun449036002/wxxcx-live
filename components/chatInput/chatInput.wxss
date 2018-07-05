@@ -1,0 +1,19 @@
+/* components/chatInput/chatInput.wxss */
+.chat-bottom {
+  display: flex;
+  height: 10vh;
+}
+.chat-input {
+  width: 66vw;
+  height: 7vh;
+  margin-top: 1vh;
+  margin-left:10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  background-color: rgba(232, 232, 232, 0.5);
+}
+
+.btn-send {
+  height: 7vh;
+  margin-top: 1vh;
+}

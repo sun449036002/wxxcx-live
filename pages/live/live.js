@@ -1,5 +1,6 @@
 // pages/live/live.js
-const RTMPURL = getApp().globalData.rtmpurl;
+const app = getApp();
+const RTMPURL = app.globalData.rtmpurl;
 
 Page({
 
@@ -8,7 +9,9 @@ Page({
    */
   data: {
     roomId: 0,
-    rtmpUrl : RTMPURL
+    isFullScene: false,
+    livePlayHeight: "50vh",
+    rtmpUrl: RTMPURL
   },
 
   /**
@@ -19,7 +22,7 @@ Page({
       roomId: options.roomId || 0
     });
     wx.setNavigationBarTitle({
-      title: "房间号：" + options.roomId//页面标题为路由参数
+      title: "房间号：" + options.roomId //页面标题为路由参数
     })
   },
 
@@ -34,7 +37,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log('onShow');
+    app.checkLogin();
   },
 
   /**
@@ -85,5 +89,15 @@ Page({
    */
   statechange(e) {
     console.log('live-pusher code:', e.detail.code)
+  },
+
+  /**
+   * 进入全屏模式
+   */
+  toFullScene: function() {
+    this.setData({
+      isFullScene: true,
+      livePlayHeight: "90vh"
+    })
   }
 })

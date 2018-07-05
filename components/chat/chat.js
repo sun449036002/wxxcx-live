@@ -8,6 +8,10 @@ Component({
     roomId: {
       type: String,
       value: ""
+    },
+    isFullScene: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -21,17 +25,17 @@ Component({
     scrollTop: 0
   },
 
-  created : function(){
+  created: function() {
     console.log("com created");
   },
-  attached :function(){
+  attached: function() {
     console.log("com attached");
   },
   ready: function(res) {
     console.log("com ready");
     this.init();
   },
-  detached : function(){
+  detached: function() {
     wx.closeSocket();
   },
 

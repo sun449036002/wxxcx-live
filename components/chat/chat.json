@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "chatInput" : "/components/chatInput/chatInput"
+  }
 }

@@ -1,0 +1,5 @@
+<!--components/chatInput/chatInput.wxml-->
+<view class='chat-bottom'>
+  <input class='chat-input' placeholder='聊一聊吧~' value='{{msg}}' bindinput='chatInputChange'></input>
+  <button class='btn-send' bindtap='sendMsg' size='mini'>发送</button>
+</view>

@@ -1,13 +1,20 @@
 <!--components/chat/chat.wxml-->
-<view class='chat-box'>
-  <scroll-view class='chat-list' scroll-y scroll-top="{{scrollTop}}">
-    <view class='chat-item'  wx:for="{{chatList}}" wx:key="key">
-      <view class='nickname'>{{item.nickname}}:</view>
-      <view class='msg'>{{item.content}}</view>
-    </view>
-  </scroll-view>
-  <view class='chat-bottom'>
-    <input class='chat-input' placeholder='聊一聊吧~' value='{{msg}}' bindinput='chatInputChange'></input>
-    <button class='btn-send' bindtap='sendMsg' size='mini' bindtap='sendMsg'>发送</button>
+<block wx:if="{{!isFullScene}}">
+  <view class='chat-box'>
+    <scroll-view class='chat-list' scroll-y scroll-top="{{scrollTop}}">
+      <view class='chat-item' wx:for="{{chatList}}" wx:key="key">
+        <view class='nickname'>{{item.nickname}}:</view>
+        <view class='msg'>{{item.content}}</view>
+      </view>
+    </scroll-view>
+    <chatInput />
   </view>
-</view>
+</block>
+<block wx:else>
+  <scroll-view class='chat-list-full-scene' scroll-y="true" scroll-top="{{scrollTop}}">
+    <cover-view class='chat-item' wx:for="{{chatList}}" wx:key="key">
+      <cover-view class='nickname'>{{item.nickname}}:</cover-view>
+      <cover-view class='msg'>{{item.content}}</cover-view>
+    </cover-view>
+  </scroll-view>
+</block>

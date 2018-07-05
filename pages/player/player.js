@@ -10,35 +10,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    roomId:0,
-    rtmpUrl : RTMPURL
+    roomId: 0,
+    isFullScene: false,
+    livePlayHeight: "50vh",
+    rtmpUrl: RTMPURL
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     console.log("onLoad options", options)
     roomId = options.roomId;
     wx.setNavigationBarTitle({
-      title: "房间号：" + options.roomId//页面标题为路由参数
+      title: "房间号：" + options.roomId //页面标题为路由参数
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     console.log('onReady');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     console.log('onShow');
     var self = this;
-    app.checkLogin(function () {
+    app.checkLogin(function() {
       self.setData({
         roomId: roomId || 0
       })
@@ -48,41 +50,50 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
     console.log('onHide');
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   },
   statechange(e) {
     console.log('live-player code:', e.detail.code)
   },
   error(e) {
     console.error('live-player error:', e.detail.errMsg)
+  },
+  /**
+   * 进入全屏模式
+   */
+  toFullScene: function() {
+    this.setData({
+      isFullScene : true,
+      livePlayHeight:"90vh"
+    })
   }
 })

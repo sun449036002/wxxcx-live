@@ -1,1 +1,24 @@
 /* pages/live/live.wxss */
+
+
+.chat {
+  display: block;
+  width: 100vw;
+  height: 50vh;
+}
+
+.full-scene {
+  display: absolute;
+  margin-top:39vh;
+  border:1px solid red;
+
+}
+
+.full-scene-icon {
+  border:1px groove #EEE;
+  border-radius: 3px;
+   width:30px; 
+   height: 30px; 
+   margin:1px;
+
+}

@@ -1,5 +1,16 @@
-<!--pages/player/player.wxml-->
 <block wx:if="{{roomId}}">
-<live-player class="player" src="{{rtmpUrl}}/{{roomId}}" mode="RTC" autoplay bindstatechange="statechange" binderror="error"/>
-<chat class="chat" roomId="{{roomId}}"></chat>
+  <live-player class="player" src="{{rtmpUrl}}/{{roomId}}" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="height:{{livePlayHeight}}">
+    <block wx:if="{{isFullScene}}">
+      <chat class="chat full-scene" roomId="{{roomId}}" isFullScene></chat>
+    </block>
+    <block wx:else>
+      <cover-image class='full-scene-icon' src="/res/imgs/fullSceneIcon.png" bindtap='toFullScene'></cover-image>
+    </block>
+  </live-player>
+  <block wx:if="{{!isFullScene}}">
+    <chat class="chat" roomId="{{roomId}}"></chat>
+  </block>
+  <block wx:else>
+    <chatInput/>
+  </block>
 </block>
