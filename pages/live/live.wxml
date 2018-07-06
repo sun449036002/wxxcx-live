@@ -1,18 +1,9 @@
 <!--pages/live/live.wxml-->
 <block wx:if="{{roomId}}">
-  <live-pusher url="{{rtmpUrl}}/{{roomId}}" mode="RTC" autopush bindstatechange="statechange" style="width: 100vw; height: {{livePlayHeight}};">
-    <block wx:if="{{isFullScene}}">
-      <chat class="chat full-scene" roomId="{{roomId}}" isFullScene></chat>
-    </block>
-    <block wx:else>
-      <cover-image class='full-scene-icon' src="/res/imgs/fullSceneIcon.png" bindtap='toFullScene'></cover-image>
-    </block>
+  <live-pusher url="{{rtmpUrl}}/{{roomId}}" mode="RTC" autopush bindstatechange="statechange" style="width: 100vw; height: 90vh;">
+    <chat class="chat full-scene" roomId="{{roomId}}" isFullScene bindreceivedMsg="iReceivedMsg"></chat>
     <cover-view class='switch-camera' bindtap='switchCamera'>切换</cover-view>
+    <cover-view class='view-box'>在线人数:{{viewNum}}人</cover-view>
   </live-pusher>
-  <block wx:if="{{!isFullScene}}">
-    <chat class="chat" roomId="{{roomId}}"></chat>
-  </block>
-  <block wx:else>
-    <chatInput/>
-  </block>
+  <chatInput/>
 </block>

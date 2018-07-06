@@ -9,6 +9,7 @@ Page({
    */
   data: {
     roomId: 0,
+    viewNum: 6666,
     isFullScene: false,
     livePlayHeight: "50vh",
     rtmpUrl: RTMPURL
@@ -106,5 +107,16 @@ Page({
   switchCamera: function(e) {
     wx.createLivePusherContext().switchCamera();
     console.log('转换摄像头ok');
+  },
+  /**
+   * 组件接收到消息
+   */
+  iReceivedMsg: function(res) {
+    console.log("iReceivedMsg", res);
+    if(res.detail) {
+      this.setData({
+        viewNum : res.detail.personNum || 0      
+      })
+    }
   }
 })

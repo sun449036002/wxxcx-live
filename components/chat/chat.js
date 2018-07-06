@@ -19,7 +19,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    chatList: [],
+    //这里的空格对象是为了占位cover-view显示区域
+    chatList: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
     msg: "",
     isSocketOpen: false,
     scrollTop: 0
@@ -68,11 +69,21 @@ Component({
         console.log('收到服务器内容：' + res.data);
         var data = JSON.parse(res.data);
         console.log("转换成JSON 对象：", data);
-        self.setData({
-          chatList: self.data.chatList.concat(data),
-          scrollTop: (self.data.chatList.length) * 1000
-        })
+        if (self.data.isFullScene) {
+          self.data.chatList.unshift(data);
+        } else {
+          self.data.chatList.push(data);
+        }
 
+        self.setData({
+          chatList: self.data.chatList,
+          scrollTop: (self.data.chatList.length) * 1000
+        });
+
+        //触发外部事件
+        self.triggerEvent("receivedMsg", {
+          personNum: data.personNum
+        });
       });
       wx.onSocketClose(function(res) {
         console.log('WebSocket 已关闭！')

@@ -11,10 +11,11 @@
   </view>
 </block>
 <block wx:else>
-  <scroll-view class='chat-list-full-scene' scroll-y="true" scroll-top="{{scrollTop}}">
+   <!-- <scroll-view class='chat-list-full-scene' scroll-y="true" scroll-top="{{scrollTop}}"> -->
+   <cover-view class='chat-list-full-scene'>
     <cover-view class='chat-item' wx:for="{{chatList}}" wx:key="key">
       <cover-view class='nickname'>{{item.nickname}}:</cover-view>
-      <cover-view class='msg'>{{item.content}}</cover-view>
+      <cover-view class='msg'>:{{item.content}}</cover-view>
     </cover-view>
-  </scroll-view>
+   </cover-view> 
 </block>

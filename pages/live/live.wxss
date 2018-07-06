@@ -1,34 +1,42 @@
 /* pages/live/live.wxss */
+
 .chat {
   display: block;
   width: 100vw;
   height: 50vh;
+  overflow: hidden;
 }
 
 .full-scene {
   display: absolute;
-  margin-top:39vh;
-  border:1px solid red;
-
+  margin-top: 39vh;
+  max-height: 50vh;
 }
 
 .full-scene-icon {
-  border:1px groove #EEE;
+  border: 1px groove #eee;
   border-radius: 3px;
-   width:30px; 
-   height: 30px; 
-   margin:1px;
-
+  width: 30px;
+  height: 30px;
+  margin: 1px;
 }
 
 .switch-camera {
   position: absolute;
-  top:50px;
-  left:1px;
-  width:35px;
-  height:25px;
-  padding:5px;
-  color:white;
-  border:1px solid blueviolet;
+  top: 3px;
+  left: 3px;
+  width: 35px;
+  height: 25px;
+  padding: 5px;
+  color: white;
+  border: 1px solid blueviolet;
   border-radius: 3px;
+}
+.view-box {
+  position: absolute;
+  width:fit-content;  
+  top:3px;
+  right:0;
+  color:wheat;
+  padding-right: 5px;
 }

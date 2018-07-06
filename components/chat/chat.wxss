@@ -1,5 +1,4 @@
 /* components/chat/chat.wxss */
-
 .chat-box {
   height: 50vh;
   max-height: 50vh;
@@ -9,6 +8,12 @@
 .chat-list {
   min-height: 40vh;
   height: 40vh;
+}
+
+.chat-list-full-scene {
+  height: 50vh;
+  max-height: 50vh;
+   overflow-y:scroll; 
 }
 
 .chat-bottom {
@@ -24,14 +29,18 @@
 }
 
 .nickname {
-  color: #576b95;
+  color: #FF83FA;
   margin-right: 10px;
+  width:30vw;
   max-width: 30vw;
   overflow: hidden;
-   white-space: nowrap; 
+  white-space: nowrap; 
 }
 
 .msg {
+  color: white;
+  width:70vw;
+  max-width: 70vw;
 }
 
 .chat-input {

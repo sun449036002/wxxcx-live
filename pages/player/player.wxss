@@ -9,11 +9,12 @@
   display: block;
   width: 100vw;
   height: 50vh;
+  background-color:#DEB887; 
 }
 
 .full-scene {
   display: absolute;
-  margin-top:39vh;
+  margin-top:40vh;
   border:1px solid red;
 
 }
