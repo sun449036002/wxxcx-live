@@ -11,7 +11,7 @@ App({
   globalData: {
     apiurl: API_URL,
     rtmpurl: "https://www.sun.zj.cn/live",
-    socketurl: "wss://talk.sun.zj.cn",
+    socketurl: "wss://talk.sun.zj.cn/wss",
     userInfo: null
   },
   /**

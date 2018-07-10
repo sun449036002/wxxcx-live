@@ -9,21 +9,28 @@
   display: block;
   width: 100vw;
   height: 50vh;
-  background-color:#DEB887; 
+  overflow: hidden;
 }
 
 .full-scene {
   display: absolute;
-  margin-top:40vh;
-  border:1px solid red;
-
+  margin-top: 40vh;
+  border: 1px solid red;
 }
 
 .full-scene-icon {
-  border:1px groove #EEE;
+  border: 1px groove #eee;
   border-radius: 3px;
-   width:30px; 
-   height: 30px; 
-   margin:1px;
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+}
 
+.view-box {
+  position: absolute;
+  width: fit-content;
+  top: 3px;
+  right: 0;
+  color: wheat;
+  padding-right: 5px;
 }

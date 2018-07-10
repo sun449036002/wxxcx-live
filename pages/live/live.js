@@ -9,7 +9,7 @@ Page({
    */
   data: {
     roomId: 0,
-    viewNum: 6666,
+    viewNum: 0,
     isFullScene: false,
     livePlayHeight: "50vh",
     rtmpUrl: RTMPURL

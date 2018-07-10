@@ -12,7 +12,7 @@ Page({
   data: {
     roomId: 0,
     isFullScene: false,
-    livePlayHeight: "50vh",
+    viewNum: 0,
     rtmpUrl: RTMPURL
   },
 
@@ -92,8 +92,18 @@ Page({
    */
   toFullScene: function() {
     this.setData({
-      isFullScene : true,
-      livePlayHeight:"90vh"
+      isFullScene: !this.data.isFullScene
     })
+  },
+  /**
+   * 组件接收到消息
+   */
+  iReceivedMsg: function (res) {
+    console.log("iReceivedMsg", res);
+    if (res.detail) {
+      this.setData({
+        viewNum: res.detail.personNum || 0
+      })
+    }
   }
 })

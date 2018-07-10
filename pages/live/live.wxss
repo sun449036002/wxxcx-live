@@ -1,16 +1,9 @@
 /* pages/live/live.wxss */
-
 .chat {
   display: block;
   width: 100vw;
   height: 50vh;
   overflow: hidden;
-}
-
-.full-scene {
-  display: absolute;
-  margin-top: 39vh;
-  max-height: 50vh;
 }
 
 .full-scene-icon {

@@ -1,16 +1,7 @@
 <block wx:if="{{roomId}}">
-  <live-player class="player" src="{{rtmpUrl}}/{{roomId}}" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="height:{{livePlayHeight}}">
-    <block wx:if="{{isFullScene}}">
-      <chat class="chat full-scene" roomId="{{roomId}}" isFullScene></chat>
-    </block>
-    <block wx:else>
-      <cover-image class='full-scene-icon' src="/res/imgs/fullSceneIcon.png" bindtap='toFullScene'></cover-image>
-    </block>
+  <live-player class="player" src="{{rtmpUrl}}/{{roomId}}" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="height:{{isFullScene ? '100vh' : '50vh'}}">
+    <cover-image class='full-scene-icon' src="/res/imgs/fullSceneIcon.png" bindtap='toFullScene'></cover-image>
+    <cover-view class='view-box'>在线人数:{{viewNum}}人</cover-view>
   </live-player>
-  <block wx:if="{{!isFullScene}}">
-    <chat class="chat" roomId="{{roomId}}"></chat>
-  </block>
-  <block wx:else>
-    <chatInput/>
-  </block>
+  <chat class="chat" roomId="{{roomId}}" bindreceivedMsg="iReceivedMsg"></chat>
 </block>

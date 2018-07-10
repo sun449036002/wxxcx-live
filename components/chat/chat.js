@@ -1,5 +1,7 @@
 // components/chat/chat.js
 const app = getApp();
+const SOCKET_URL = app.globalData.socketurl;
+
 Component({
   /**
    * 组件的属性列表
@@ -20,7 +22,7 @@ Component({
    */
   data: {
     //这里的空格对象是为了占位cover-view显示区域
-    chatList: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+    chatList: [],
     msg: "",
     isSocketOpen: false,
     scrollTop: 0
@@ -51,7 +53,7 @@ Component({
         console.log(app.globalData.userInfo);
         if (app.globalData.userInfo) {
           wx.connectSocket({
-            url: 'wss://talk.sun.zj.cn/wss?roomId=' + (self.data.roomId || "") + "&sessionKey=" + app.globalData.userInfo.session_key
+            url: SOCKET_URL + '?roomId=' + (self.data.roomId || "") + "&sessionKey=" + app.globalData.userInfo.session_key
           });
         }
       }, 500);
@@ -69,21 +71,18 @@ Component({
         console.log('收到服务器内容：' + res.data);
         var data = JSON.parse(res.data);
         console.log("转换成JSON 对象：", data);
-        if (self.data.isFullScene) {
-          self.data.chatList.unshift(data);
-        } else {
-          self.data.chatList.push(data);
-        }
-
+        self.data.chatList.push(data);
         self.setData({
           chatList: self.data.chatList,
           scrollTop: (self.data.chatList.length) * 1000
         });
 
         //触发外部事件
-        self.triggerEvent("receivedMsg", {
-          personNum: data.personNum
-        });
+        if (typeof data.personNum != "undefined") {
+          self.triggerEvent("receivedMsg", {
+            personNum: data.personNum
+          });
+        }
       });
       wx.onSocketClose(function(res) {
         console.log('WebSocket 已关闭！')
