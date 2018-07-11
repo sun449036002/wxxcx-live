@@ -15,7 +15,7 @@
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  background-color: blueviolet;
+  border:1px groove #eee;
 }
 
 .nickname {

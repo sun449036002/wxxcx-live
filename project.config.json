@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -60,8 +60,8 @@
 					"query": "roomId=room_12"
 				},
 				{
-					"id": -1,
-					"name": "直播页",
+					"id": 4,
+					"name": "我的页面",
 					"pathName": "pages/my/my",
 					"query": ""
 				}

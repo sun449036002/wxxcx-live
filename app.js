@@ -12,6 +12,7 @@ App({
     apiurl: API_URL,
     rtmpurl: "rtmp://www.sun.zj.cn/live",
     socketurl: "wss://talk.sun.zj.cn/wss",
+    userLocalInfo : null,
     userInfo: null
   },
   /**
@@ -26,6 +27,7 @@ App({
           //让用户授权
           self.login(callback);
         } else {
+          self.globalData.userLocalInfo = wx.getStorageSync("userLocalInfo");
           self.globalData.userInfo = {
             nickname: res.data.nickname,
             session_key: wx.getStorageSync("session_key")
@@ -56,7 +58,9 @@ App({
                 wx.getUserInfo({
                   success: res => {
                     // 可以将 res 发送给后台解码出 unionId
-                    self.globalData.userInfo = res.userInfo
+                    self.globalData.userLocalInfo = res.userInfo
+                    wx.setStorageSync("userLocalInfo", res.userInfo);
+
                     //请求服务器 保存用户数据
                     wx.request({
                       url: API_URL + "user/login",
