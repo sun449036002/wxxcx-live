@@ -1,6 +1,7 @@
 /* pages/my/my.wxss */
 
 .box {
+  background-color: #eee;
 }
 
 .top {
@@ -15,7 +16,7 @@
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  border:1px groove #eee;
+  border: 1px groove #eee;
 }
 
 .nickname {
@@ -24,14 +25,21 @@
   line-height: 50px;
 }
 
-.main {
-  height: 60vh;
+.main, .extend {
+  /* height: 30vh; */
+  background-color: white;
+  margin-bottom: 15px;
 }
 
 .item {
   padding-left: 15px;
   height: 36px;
   line-height: 36px;
+  background-image: url(https://talk.sun.zj.cn/mp3dir/jiantou.png);
+  /* background-size: cover; */
+  background-size: 10%;  
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
 }
 
 .item:not(:last-child) {
@@ -40,6 +48,6 @@
 
 .menu {
   position: fixed;
-  bottom:0;
+  bottom: 0;
   height: 36px;
 }

@@ -4,7 +4,12 @@
     <text class='nickname'>{{nickname}}</text>
   </view>
   <view class='main'>
-    <view class='item i-like'>我关注的</view>
+    <view class='item money'>余额</view>
+    <view class='item gift'>礼品袋</view>
+    <view class='item more'>更多</view>
+  </view>
+  <view class='extend'>
+  <view class='item i-like'>我关注的</view>
     <view class='item i-see-who'>我看过谁</view>
     <view class='item who-see-me'>谁看过我</view>
   </view>
