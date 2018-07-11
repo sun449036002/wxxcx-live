@@ -1,0 +1,15 @@
+<!--components/menu/menu.wxml-->
+<view class='menu'>
+  <block wx:for="{{menuList}}" wx:key="key">
+    <block wx:if="{{item.name == curMenu}}">
+      <view class='item {{item.name}} selected'>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <navigator class='item {{item.name}}' url='{{item.url}}'>
+        <text>{{item.title}}</text>
+      </navigator>
+    </block>
+  </block>
+</view>

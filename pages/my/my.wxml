@@ -1,0 +1,12 @@
+<view class="box">
+  <view class='top'>
+    <image class='head-img' src=''></image>
+    <text class='nickname'>美丽的右罗荣桓</text>
+  </view>
+  <view class='main'>
+    <view class='item i-like'>我关注的</view>
+    <view class='item i-see-who'>我看过谁</view>
+    <view class='item who-see-me'>谁看过我</view>
+  </view>
+  <menu class="menu" curMenu="my"/>
+</view>

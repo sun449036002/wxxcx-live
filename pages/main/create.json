@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText":"创建直播"
+  "navigationBarTitleText":"创建直播",
+  "usingComponents": {
+    "menu": "/components/menu/menu"
+  }
 }

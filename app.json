@@ -5,7 +5,8 @@
     "pages/live/live",
     "pages/main/create",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",

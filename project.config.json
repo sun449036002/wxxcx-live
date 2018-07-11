@@ -58,6 +58,12 @@
 					"name": "播放页",
 					"pathName": "pages/player/player",
 					"query": "roomId=room_12"
+				},
+				{
+					"id": -1,
+					"name": "直播页",
+					"pathName": "pages/my/my",
+					"query": ""
 				}
 			]
 		}

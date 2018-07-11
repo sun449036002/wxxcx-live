@@ -38,3 +38,9 @@
 .room-cover {
   width: 100vw;
 }
+
+.menu {
+  position: fixed;
+  bottom:0;
+  height: 36px;
+}

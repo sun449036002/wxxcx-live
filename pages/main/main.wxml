@@ -1,12 +1,13 @@
 <!--pages/main/main.wxml-->
-<scroll-view class='live-list' scroll-y bindscrolltolower="scrollToLower">
+ <scroll-view class='live-list' scroll-y bindscrolltolower="scrollToLower">
   <view class='live-item' wx:for="{{liveList}}" wx:key="{{key}}">
     <navigator url='/pages/player/player?roomId={{item.roomId}}'>
       <image class='room-cover' src='{{item.roomCover}}'></image>
       <view class='title'>{{item.roomName}}</view>
     </navigator>
   </view>
-</scroll-view>
-<navigator url="/pages/main/create">
+</scroll-view> 
+ <navigator url="/pages/main/create">
   <view class='create-room'>创</view>
-</navigator>
+</navigator> 
+<menu class="menu" curMenu="home" />
