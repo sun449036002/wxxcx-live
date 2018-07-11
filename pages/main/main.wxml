@@ -1,5 +1,5 @@
 <!--pages/main/main.wxml-->
-<scroll-view class='live-list'>
+<scroll-view class='live-list' scroll-y bindscrolltolower="scrollToLower">
   <view class='live-item' wx:for="{{liveList}}" wx:key="{{key}}">
     <navigator url='/pages/player/player?roomId={{item.roomId}}'>
       <image class='room-cover' src='{{item.roomCover}}'></image>

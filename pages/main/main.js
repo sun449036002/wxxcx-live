@@ -8,72 +8,95 @@ Page({
    * 页面的初始数据
    */
   data: {
-    liveList : []
+    page: 1,
+    isEnd: false,
+    liveList: []
   },
 
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var self = this;
-    wx.request({
-      url: APIURL + 'room/get-list',
-      success:function(res){
-        console.log(res.data.items);
-        self.setData({
-          liveList : res.data.items || []
-        })
-      }
-    })
+    this._getLiveList();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
+  },
+
+  /**
+   * 获取直播列表  分页
+   */
+  _getLiveList: function(page) {
+    var self = this;
+    page = !page ? 1 : page;
+    if (self.data.isEnd) {
+      return;
+    }
+    wx.request({
+      url: APIURL + 'room/get-list?page=' + page,
+      success: function(res) {
+        console.log(res.data.items);
+        self.setData({
+          page: res.data.page,
+          isEnd: res.data.isEnd,
+          liveList: self.data.liveList.concat(res.data.items || [])
+        })
+      }
+    })
+  },
+  /**
+   * 滚动到底部触发
+   */
+  scrollToLower: function(res) {
+    console.log(res);
+    this._getLiveList(this.data.page);
   }
 })
