@@ -81,14 +81,25 @@ Page({
       return;
     }
     wx.request({
-      url: APIURL + 'room/get-list?page=' + page,
+      url: APIURL + 'room/list?page=' + page,
       success: function(res) {
-        console.log(res.data.items);
         self.setData({
           page: res.data.page,
           isEnd: res.data.isEnd,
           liveList: self.data.liveList.concat(res.data.items || [])
         })
+      },
+      fail: function(res){
+       wx.showToast({
+         title: res.errMsg || '111',
+         icon: '',
+         image: '',
+         duration: 0,
+         mask: true,
+         success: function(res) {},
+         fail: function(res) {},
+         complete: function(res) {},
+       })
       }
     })
   },

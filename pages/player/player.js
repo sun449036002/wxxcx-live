@@ -105,5 +105,12 @@ Page({
         viewNum: res.detail.personNum || 0
       })
     }
-  }
+  },
+
+  /**
+   * 获取题目
+   */
+  getQues: function(){
+    //todo ajax 展示在.ques view中
+  },
 })

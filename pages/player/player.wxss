@@ -34,3 +34,10 @@
   color: wheat;
   padding-right: 5px;
 }
+
+.ques {
+  padding:15px;
+  border:1px saddlebrown solid;
+  height: 40vh;
+  text-align: center;
+}

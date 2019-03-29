@@ -1,5 +1,5 @@
 //app.js
-const API_URL = "https://talk.sun.zj.cn/v1/";
+const API_URL = "https://live.whatareu.top/v1/";
 App({
   onLaunch: function() {
     var self = this;
@@ -10,8 +10,8 @@ App({
   },
   globalData: {
     apiurl: API_URL,
-    rtmpurl: "rtmp://www.sun.zj.cn/live",
-    socketurl: "wss://talk.sun.zj.cn/wss",
+    rtmpurl: "rtmp://live.whatareu.top/live",
+    socketurl: "wss://live.whatareu.top/wss",
     userLocalInfo : null,
     userInfo: null
   },

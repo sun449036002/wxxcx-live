@@ -1,8 +1,9 @@
 <!--pages/live/live.wxml-->
 <block wx:if="{{roomId}}">
-  <live-pusher url="{{rtmpUrl}}/{{roomId}}" mode="RTC" autopush bindstatechange="statechange" style="width: 100vw; height: 50vh;">    
+  <!-- <live-pusher url="{{rtmpUrl}}/{{roomId}}" mode="RTC" autopush bindstatechange="statechange" style="width: 100vw; height: 50vh;">    
     <cover-view class='switch-camera' bindtap='switchCamera'>切换</cover-view>
     <cover-view class='view-box'>在线人数:{{viewNum}}人</cover-view>
-  </live-pusher>
+  </live-pusher> -->
+  <view class="ques">直播题目发起界面</view>
   <chat class="chat" roomId="{{roomId}}" bindreceivedMsg="iReceivedMsg"></chat>
 </block>
