@@ -1,0 +1,4 @@
+<view class="ques">
+  <view style='color:#23ACEE;'>题目Component</view>
+  <textarea>Socket 实时获取题目，10分钟换一个谜语, 直播题目抢答界面,将在30秒后，展示题目,谁将是第一名答对者</textarea>
+</view>

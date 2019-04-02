@@ -1,4 +1,4 @@
-// components/menu.js
+// components/ques/ques.js
 Component({
   /**
    * 组件的属性列表
