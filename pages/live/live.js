@@ -115,8 +115,14 @@ Page({
     console.log("iReceivedMsg", res);
     if(res.detail) {
       this.setData({
-        viewNum : res.detail.personNum || 0      
+        viewNum : res.detail.personNum || 0
       })
     }
-  }
+  },
+
+  //刷新谜题
+  refreshRiddle: function () {
+    console.log("live刷新谜题");
+    this.selectComponent('#ques').getRiddle();
+  },
 })

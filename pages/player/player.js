@@ -107,10 +107,9 @@ Page({
     }
   },
 
-  /**
-   * 获取题目
-   */
-  getQues: function(){
-    //todo ajax 展示在.ques view中
+  //刷新谜题
+  refreshRiddle: function(){
+    console.log("player刷新谜题");
+    this.selectComponent('#ques').getRiddle();
   },
 })

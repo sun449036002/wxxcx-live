@@ -1,4 +1,8 @@
 <view class="ques">
-  <view style='color:#23ACEE;'>题目Component</view>
-  <textarea>Socket 实时获取题目，10分钟换一个谜语, 直播题目抢答界面,将在30秒后，展示题目,谁将是第一名答对者</textarea>
+  <view style='color:#23ACEE;'  wx:if="{{m > 0 || s > 0}}">距离下一个谜语，还剩</view>
+  <view class='tips' wx:if="{{riddleText != ''}}">请直接在聊天框中作答~~~</view>
+  <view class="riddle-text {{(m > 0 || s > 0) ? 'auto' : ''}}" wx:if="{{riddleText != ''}}">{{riddleText}}</view>
+  <view class='timer' wx:if="{{m > 0 || s > 0}}">
+    <text class='t-m'>{{m}}</text>分<text class='t-s'>{{s}}</text>秒
+  </view>
 </view>

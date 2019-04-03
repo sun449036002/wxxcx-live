@@ -3,6 +3,6 @@
     <cover-image class='full-scene-icon' src="/res/imgs/fullSceneIcon.png" bindtap='toFullScene'></cover-image>
     <cover-view class='view-box'>在线人数:{{viewNum}}人</cover-view>
   </live-player> -->
-  <view class="ques">Socket 实时获取题目，10分钟换一个谜语, 直播题目抢答界面,将在30秒后，展示题目,谁将是第一名答对者</view>
-  <chat class="chat" roomId="{{roomId}}" bindreceivedMsg="iReceivedMsg"></chat>
+  <ques id="ques" roomId="{{roomId}}"></ques>
+  <chat class="chat" roomId="{{roomId}}" bindreceivedMsg="iReceivedMsg" bindrefreshRiddle="refreshRiddle"></chat>
 </block>

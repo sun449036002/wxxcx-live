@@ -29,13 +29,10 @@ Component({
   },
 
   created: function() {
-    console.log("com created");
   },
   attached: function() {
-    console.log("com attached");
   },
   ready: function(res) {
-    console.log("com ready");
     this.init();
   },
   detached: function() {
@@ -76,6 +73,11 @@ Component({
           chatList: self.data.chatList,
           scrollTop: (self.data.chatList.length) * 1000
         });
+
+        //调用外部组件事件，重新进入一下题
+        if (data.refreshRiddle) {
+          self.triggerEvent("refreshRiddle");
+        }
 
         //触发外部事件
         if (typeof data.personNum != "undefined") {
