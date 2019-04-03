@@ -122,7 +122,12 @@ Page({
 
   //刷新谜题
   refreshRiddle: function () {
-    console.log("live刷新谜题");
-    this.selectComponent('#ques').getRiddle();
+    console.log("player刷新谜题");
+    var quesCom = this.selectComponent('#ques');
+    quesCom.setData({
+      riddleText: "",
+      riddleType: "timer"
+    });
+    quesCom.getRiddle();
   },
 })

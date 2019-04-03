@@ -69,7 +69,7 @@ Component({
     },
     //计时器
     timerTick: function(times) {
-      console.log(times);
+      // console.log(times);
       if (times <= 0) {
         this.setData({
           s: 0,

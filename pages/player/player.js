@@ -110,6 +110,11 @@ Page({
   //刷新谜题
   refreshRiddle: function(){
     console.log("player刷新谜题");
-    this.selectComponent('#ques').getRiddle();
+    var quesCom = this.selectComponent('#ques');
+    quesCom.setData({
+      riddleText: "",
+      riddleType: "timer"
+    });
+    quesCom.getRiddle();
   },
 })
