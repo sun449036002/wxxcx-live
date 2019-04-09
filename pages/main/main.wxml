@@ -2,7 +2,7 @@
  <scroll-view class='live-list' scroll-y bindscrolltolower="scrollToLower">
   <view class='live-item' wx:for="{{liveList}}" wx:key="{{key}}">
     <navigator url='/pages/player/player?roomId={{item.roomId}}'>
-      <image class='room-cover' src='{{item.roomCover}}'></image>
+      <image class='room-cover' src='{{item.roomCover}}' lazy-load></image>
       <view class='title'>{{item.roomName}}</view>
     </navigator>
   </view>

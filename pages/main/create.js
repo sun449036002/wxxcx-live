@@ -10,6 +10,8 @@ Page({
    */
   data: {
     roomTitle: "",
+    coverImg: "",
+    clientCoverImg: "",
   },
 
   /**
@@ -80,10 +82,10 @@ Page({
    */
   createRoom: function(e) {
     var self = this;
-    if (this.data.roomTitle == "" || this.data.roomTitle.length > 10) {
+    if (this.data.roomTitle == "" || this.data.roomTitle.length > 10 || this.data.coverImg == '') {
       wx.showModal({
         title: '提示',
-        content: '房间名称不得为空且不得超过10个字符',
+        content: "1.房间名称不得为空且不得超过10个字符, \r\n 2.且必须上传一张封面图",
         showCancel: false
       })
       return false;
@@ -91,7 +93,8 @@ Page({
     wx.request({
       url: APIURL + 'room/Create',
       data: {
-        name: self.data.roomTitle || ""
+        name: self.data.roomTitle || "",
+        coverImg: self.data.coverImg
       },
       success: function(res) {
         console.log("success", res);
@@ -119,5 +122,39 @@ Page({
         console.log("fail", res);
       }
     })
-  }
+  },
+  //选择上传图片
+  uploadImg: function(){
+    var self = this;
+    wx.chooseImage({
+      success: function(res) {
+        console.log(res);
+        var fpath = res.tempFilePaths[0];
+        wx.uploadFile({
+          url: APIURL + 'room/UploadImg',
+          filePath: fpath,
+          name: 'cover',
+          success: function(res) {
+            let data = JSON.parse(res.data);
+            console.log(data);
+            console.log(self.data)
+            self.setData({
+              coverImg: data.coverImg,              
+              clientCoverImg: fpath
+            });
+          },
+          fail: function(res) {
+            console.log("fail:", res)
+          }
+        })
+      },
+    })
+  },
+
+  imgerror: function(e){
+    console.log(e);
+  },
+  loadover: function(e){
+    console.log(e)
+  },
 })

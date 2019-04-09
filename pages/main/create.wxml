@@ -1,6 +1,8 @@
 <!--pages/main/create.wxml-->
 <view class='box'>
   <input class='room-title' type='text' placeholder='请输入直播间的名称' value='' bindinput='roomTitleChange'></input>
+  <image wx:if="{{clientCoverImg != ''}}" src="{{clientCoverImg}}" binderror="imgerror" bindload="loadover"></image>
+  <button class='btn-upload-img' type='primary' size='mini' bindtap="uploadImg" plain>上传封面图</button>
   <button class='btn-create' type='primary' size='default' bindtap='createRoom'>创建</button>
 </view>
 <menu class="menu" />

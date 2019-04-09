@@ -20,6 +20,9 @@
   margin-top: 15px;
 }
 
+.btn-upload-img {
+  margin-top:15px;
+}
 .menu {
   position: fixed;
   bottom:0;
