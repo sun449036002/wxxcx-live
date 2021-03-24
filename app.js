@@ -3,6 +3,7 @@ const API_URL = "https://live.whatareu.top/v1/";
 App({
   onLaunch: function() {
     var self = this;
+	console.log('i launch test')
     // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
@@ -20,6 +21,7 @@ App({
    */
   checkLogin: function(callback) {
     var self = this;
+	console.log('检测登录')
     wx.request({
       url: API_URL + 'user/check_login?session_key=' + (wx.getStorageSync("session_key") || ""),
       success: function(res) {
@@ -43,6 +45,7 @@ App({
    * auth and login and register
    */
   login: function(callback) {
+	  console.log('登录ING', callback)
     var self = this;
     wx.login({
       success: res => {

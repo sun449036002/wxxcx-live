@@ -16,9 +16,9 @@ Page({
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     console.log(getCurrentPages());
-    wx.navigateBack({
-      delta : 1
-    });
+    wx.navigateTo({
+      url: '/pages/my/my',
+    })
     console.log('backing')
   }
 })

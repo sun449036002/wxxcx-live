@@ -1,0 +1,6 @@
+<view>
+<my-clip settings="{{settings}}"></my-clip>
+</view>
+<navigator url="plugin://myPlugin/main?mode=template">
+<view>视频模板</view>
+</navigator>

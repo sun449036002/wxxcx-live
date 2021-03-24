@@ -6,12 +6,21 @@
     "pages/main/create",
     "pages/index/index",
     "pages/logs/logs",
+    "pages/clip/clip",
     "pages/my/my"
   ],
+  "plugins": {
+    "myPlugin": {
+      "provider": "wx76f1d77827f78beb",
+      "version": "1.7.1",
+	  "export": "index.js"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

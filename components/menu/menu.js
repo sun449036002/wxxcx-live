@@ -20,6 +20,11 @@ Component({
         name: "home",
         url: "/pages/main/main"
       },
+	  {
+	    title: "创视",
+	    name: "video",
+	    url: "/pages/clip/clip"
+	  },
       {
         title: "我的",
         name: "my",

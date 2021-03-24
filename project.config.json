@@ -1,71 +1,95 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
-	"appid": "wxdf13e09f4303a326",
-	"projectname": "wxxcx-live",
-	"isGameTourist": false,
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 4,
-			"list": [
-				{
-					"id": -1,
-					"name": "主页",
-					"pathName": "pages/main/main",
-					"query": ""
-				},
-				{
-					"id": 1,
-					"name": "直播页",
-					"pathName": "pages/live/live",
-					"query": "roomId=room_12"
-				},
-				{
-					"id": -1,
-					"name": "创建直播页",
-					"pathName": "pages/main/create",
-					"query": ""
-				},
-				{
-					"id": 3,
-					"name": "播放页",
-					"pathName": "pages/player/player",
-					"query": "roomId=room_12"
-				},
-				{
-					"id": 4,
-					"name": "我的页面",
-					"pathName": "pages/my/my",
-					"query": ""
-				}
-			]
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useMultiFrameRuntime": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.15.0",
+  "appid": "wxdf13e09f4303a326",
+  "projectname": "wxxcx-live",
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "主页",
+          "pathName": "pages/main/main",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "直播页",
+          "pathName": "pages/live/live",
+          "query": "roomId=room_12"
+        },
+        {
+          "id": -1,
+          "name": "创建直播页",
+          "pathName": "pages/main/create",
+          "query": ""
+        },
+        {
+          "id": 3,
+          "name": "播放页",
+          "pathName": "pages/player/player",
+          "query": "roomId=room_12"
+        },
+        {
+          "id": 4,
+          "name": "我的页面",
+          "pathName": "pages/my/my",
+          "query": ""
+        }
+      ]
+    }
+  }
 }
